@@ -45,7 +45,7 @@
                 </a>
             @endif
 
-            <x-primary-button class="ms-3 bg-red-600">
+            <x-primary-button class="ms-3 bg-red-500 hover:bg-red-600">
               {{ __('Entrar') }}
             </x-primary-button>
 
