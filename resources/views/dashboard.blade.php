@@ -11,7 +11,7 @@
         </div>
     </div>  -->
 
-    <div class="px-20 pt-10 flex flex-wrap justify-between gap-6">
+    <div class="px-20 pt-20 flex flex-wrap justify-between gap-6">
         <div class="max-w-xs w-full sm:w-1/2 md:w-1/3 lg:w-1/4 rounded overflow-hidden shadow-lg">
             <img class="w-full" src="{{asset('assets/img/marcas.jpg')}}" alt="marcas">
             <div class="px-6 py-2">
@@ -45,9 +45,9 @@
         <div class="max-w-xs w-full sm:w-1/2 md:w-1/3 lg:w-1/4 rounded overflow-hidden shadow-lg">
             <img class="w-full" src="{{asset('assets/img/relatorio.jpg')}}" alt="pedidos">
             <div class="px-6 py-2">
-                <div class="font-bold text-xl mb-2">Cadastrar Pedidos</div>
+                <div class="font-bold text-xl mb-2">Empréstimos</div>
                 <p class="text-gray-700 text-base">
-                    Cadastre aqui as datas de chegada dos seus pedidos e sua marca!
+                    Cadastre aqui os empréstimos de produtos!
                 </p> 
             </div>
             <div class="px-6 pt-4 pb-2">
