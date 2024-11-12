@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Resources\Views\Auth;
+use Resources\Views;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -12,6 +13,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/cadastro_marca', function () {
+    return view('cadastro_marca');
+})->middleware(['auth', 'verified'])->name('cadastro_marca');
 
 
 Route::middleware('auth')->group(function () {

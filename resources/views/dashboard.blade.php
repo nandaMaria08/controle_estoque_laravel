@@ -21,9 +21,12 @@
                 </p> 
             </div>
             <div class="px-6 pt-4 pb-2">
-                <button class="bg-red-300 hover:bg-red-400 text-white font-bold py-2 px-4 rounded">
+                <a href="{{('cadastro_marca')}}">
+                    <button href="{{('cadastro_marca')}}" class="bg-red-300 hover:bg-red-400 text-white font-bold py-2 px-4 rounded">
                     Cadastrar
-                </button>
+                    </button> 
+                </a>
+                
             </div>
         </div>
 

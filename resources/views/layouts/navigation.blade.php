@@ -14,7 +14,7 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="border-b-2 border-transparent hover:border-red-500 focus:border-red-500 active:border-red-500">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="border-b-2 border-transparent hover:border-red-500 focus:border-red-500 active:border-red-500 ">
                         {{ __('Controle de Estoque') }} 
                     </x-nav-link>
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="border-b-2 border-transparent hover:border-red-500 focus:border-red-500 active:border-red-500">

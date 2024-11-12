@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body class="font-sans antialiased">
+        <div class="h-screen bg-white">
+            @include('layouts.navigation')
+
+            <!-- Page Heading -->
+            @isset($header)
+                <header class="bg-red shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endisset
+
+            <main class="flex justify-center pt-20">
+                <div class="w-full max-w-4xl bg-white p-8 rounded-lg shadow-lg">
+                    <h1 class="text-center text-2xl font-semibold mb-6">Cadastre aqui as marcas disponíveis na sua loja!</h1>
+                    <hr class="mb-6">
+                    <form class="grid gap-6 mb-6 md:grid-cols-2" action="">
+                        <div>
+                            <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white" for="marca">Marca</label>
+                            <input type="text" id="marca" name="marca" class="min-w-[500px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" placeholder="Escreva a marca" required>
+                        </div>
+                    </form>
+                </div>
+            </main>
+
+           
+        </div>
+        
+    </body>
+</html>
