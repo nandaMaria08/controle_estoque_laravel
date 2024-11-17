@@ -31,17 +31,19 @@
                 <div class="w-full max-w-4xl bg-white p-8 rounded-lg shadow-lg">
                     <h1 class="text-center text-2xl font-semibold mb-6">Cadastre aqui as marcas disponíveis na sua loja!</h1>
                     <hr class="mb-6">
-                    <form class="grid gap-6 mb-6 md:grid-cols-2" action="" method="POST">
-                        @csrf 
+                    <form class="grid gap-6 mb-6 md:grid-cols-2" action="{{route('marks.update', ['mark' => $mark->id])}}" >
+                       @csrf
+                       @method('PUT')
+                       <input type="hidden" name="__method" value="PUT">
 
                         <div class="flex items-center space-x-4">
                             <div class="flex-1">
                                 <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white" for="marca">Marca</label>
-                                <input type="text" id="marca" name="marca" class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" placeholder="Escreva a marca" required>        
+                                <input type="text" id="mark" name="mark" value="{{$mark->name}}" class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" placeholder="Escreva a marca" required>        
                             </div>
                             <div class="pt-7">
                                 <button type="submit" class="bg-red-300 hover:bg-red-400 text-white font-semibold py-2 px-4 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 text-sm">
-                                    Cadastrar
+                                    Editar
                                 </button>
                              </div>
                         </div>
