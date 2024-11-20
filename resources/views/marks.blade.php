@@ -39,7 +39,7 @@
             <tbody>
                 @foreach($marks as $mark)
                     <tr class="">
-                        <td class="px-4 py-2 border-b hover:bg-red-100">{{$mark->name}}</td> 
+                        <td class="px-4 py-2 border-b hover:bg-red-100">{{$mark->mark}}</td> 
                         <td class="px-4 py-2 border-b">
                             <a href="">
                                 <button class="px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300 transition duration-200">

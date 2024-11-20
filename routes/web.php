@@ -15,7 +15,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/cadastro_marca', function () {
-    return view('cadastro_marca');
+    return view('mark_create');
 })->middleware(['auth', 'verified'])->name('cadastro_marca');
 
 Route::middleware('auth')->group(function () {

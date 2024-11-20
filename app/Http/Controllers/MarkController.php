@@ -24,7 +24,7 @@ class MarkController extends Controller
      */
     public function create()
     {
-        //
+        return view('mark_edit', ['mark' => $mark]);
     }
 
     /**
@@ -56,7 +56,13 @@ class MarkController extends Controller
      */
     public function update(Request $request, string $id)
     {
-       var_dump($id);
+       $updated = $this->mark->where('id', $id)->update($request->except(['_token', '_method']));
+
+       if($updated){
+        return redirect()->back()->with('message', 'Editado com sucesso');
+       }
+       return redirect()->back()->with('message', 'Erro');
+       
     }
 
     /**
