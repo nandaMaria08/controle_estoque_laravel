@@ -21,8 +21,8 @@
                 </p> 
             </div>
             <div class="px-6 pt-4 pb-2">
-                <a href="{{('cadastro_marca')}}">
-                    <button href="{{('mark_create')}}" class="bg-red-300 hover:bg-red-400 text-white font-bold py-2 px-4 rounded">
+                <a href="{{route('marks.create')}}">
+                    <button class="bg-red-300 hover:bg-red-400 text-white font-bold py-2 px-4 rounded">
                     Cadastrar
                     </button> 
                 </a>

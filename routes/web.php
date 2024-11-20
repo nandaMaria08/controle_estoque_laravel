@@ -14,9 +14,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/cadastro_marca', function () {
+Route::get('/mark_create', function () {
     return view('mark_create');
-})->middleware(['auth', 'verified'])->name('cadastro_marca');
+})->middleware(['auth', 'verified'])->name('mark_create');
 
 Route::middleware('auth')->group(function () {
     Route::get('/marks', [MarkController::class, 'index'])->name('marks.index');

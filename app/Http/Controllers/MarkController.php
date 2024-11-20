@@ -24,7 +24,7 @@ class MarkController extends Controller
      */
     public function create()
     {
-        return view('mark_edit', ['mark' => $mark]);
+        return view('mark_create');
     }
 
     /**
@@ -32,7 +32,15 @@ class MarkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $created = $this->mark->create([
+            'mark' => $request -> input('mark')
+      ]);
+
+      if($created){
+        return redirect()->back()->with('message', 'Cadastrado com sucesso');
+       }
+       return redirect()->back()->with('message', 'Erro');
+
     }
 
     /**
