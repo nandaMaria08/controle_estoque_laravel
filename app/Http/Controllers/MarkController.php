@@ -78,6 +78,12 @@ class MarkController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+       $deleted = $this->mark->where('id', $id)->delete();
+
+        if($deleted){
+            return redirect()->route('marks.index')->with('message', 'Excluído com sucesso!');
+        }
+    
+        return redirect()->route('marks.index')->with('message', 'Erro ao excluir!');
     }
 }
