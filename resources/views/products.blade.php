@@ -44,29 +44,30 @@
 
             <main>
     <div class="overflow-x-auto py-10 px-20">
-        <table class="min-w-full table-auto bg-white border border-red-400">
-            <thead>
-                <tr class="bg-red-200 text-left">
-                    <th class="px-4 py-2 border-b">Produtos</th>
-                    <th class="px-4 py-2 border-b">Descrição</th>
-                    <th class="px-4 py-2 border-b">Valor</th>
-                    <th class="px-4 py-2 border-b">Validade</th>
-                    <th class="px-4 py-2 border-b">Quantidade</th>
-                    <th class="px-4 py-2 border-b">Marca</th>
-                    <th class="px-4 py-2 border-b">Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($products as $product)
-                <tr class="">
-                    <td class="px-4 py-2 border-b hover:bg-red-100">{{$product->name}}</td>
-                    <td class="px-4 py-2 border-b hover:bg-red-100">{{$product->description}}</td>
-                    <td class="px-4 py-2 border-b hover:bg-red-100">{{$product->price}}</td>
-                    <td class="px-4 py-2 border-b hover:bg-red-100">{{$product->expiration_date}}</td>
-                    <td class="px-4 py-2 border-b hover:bg-red-100">{{$product->quantity}}</td>
-                    <td class="px-4 py-2 border-b hover:bg-red-100">{{ $product->id_mark}}</td>
+    <div class="overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="min-w-full table-auto bg-white border border-red-400">
+        <thead>
+            <tr class="bg-red-200 text-left">
+                <th class="px-4 py-2 border-b">Produtos</th>
+                <th class="px-4 py-2 border-b">Descrição</th>
+                <th class="px-4 py-2 border-b">Valor</th>
+                <th class="px-4 py-2 border-b">Validade</th>
+                <th class="px-4 py-2 border-b">Quantidade</th>
+                <th class="px-4 py-2 border-b">Marca</th>
+                <th class="px-4 py-2 border-b">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($products as $product)
+            <tr class="">
+                <td class="px-4 py-2 border-b hover:bg-red-100">{{$product->name}}</td>
+                <td class="px-4 py-2 border-b hover:bg-red-100">{{$product->description}}</td>
+                <td class="px-4 py-2 border-b hover:bg-red-100">{{$product->price}}</td>
+                <td class="px-4 py-2 border-b hover:bg-red-100">{{$product->expiration_date}}</td>
+                <td class="px-4 py-2 border-b hover:bg-red-100">{{$product->quantity}}</td>
+                <td class="px-4 py-2 border-b hover:bg-red-100">{{ $product->mark->mark }}</td>
 
-                    <td class="px-4 py-2 border-b">
+                <td class="px-4 py-2 border-b">
                     <div class="flex space-x-2">
                         <form action="{{route('products.destroy', ['product' => $product->id])}}" method="post">
                             @csrf
@@ -82,12 +83,13 @@
                             </button>
                         </a>
                     </div>
-                    </td>
-                </tr>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
 
-                @endforeach
-            </tbody>
-        </table>
     </div>
 </main>
 

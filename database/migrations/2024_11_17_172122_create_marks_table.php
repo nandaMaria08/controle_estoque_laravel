@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('marks', function (Blueprint $table) {
             $table->engine = "InnoDB";
             $table->id();
-            $table->text(column:'name')->nullable();
+            $table->text(column:'mark')->nullable();
+            $table->timestamps();
         });
     }
 

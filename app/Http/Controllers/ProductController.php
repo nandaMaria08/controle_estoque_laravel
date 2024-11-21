@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Product;
+use App\Models\Mark;
+
 
 use Illuminate\Http\Request;
 
@@ -16,7 +18,7 @@ class ProductController extends Controller
 {
   
     $products = Product::with('mark')->get();
-
+    
     return view('products', compact('products'));
 }
 
@@ -27,7 +29,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+
+        $marks = Mark::all();
+
+        return view('product_create', compact('marks'));
     }
 
     /**
@@ -35,7 +40,28 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+
+    $request->validate([
+        'name' => 'required|string|max:255',  
+        'description' => 'required|string',
+        'price' => 'required|numeric',
+        'expiration_date' => 'required|date',
+        'quantity' => 'required|integer',
+        'mark_id' => 'required|exists:marks,id', 
+    ]);
+
+
+    Product::create([
+        'name' => $request->name,
+        'description' => $request->description,
+        'price' => $request->price,
+        'expiration_date' => $request->expiration_date,
+        'quantity' => $request->quantity,
+        'mark_id' => $request->mark_id, 
+    ]);
+
+    return redirect()->route('products.index');
     }
 
     /**
