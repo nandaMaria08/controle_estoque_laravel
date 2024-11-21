@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('marks', function (Blueprint $table) {
-            $table->increments(column:'id');
+            $table->engine = "InnoDB";
+            $table->id();
             $table->text(column:'name')->nullable();
         });
     }

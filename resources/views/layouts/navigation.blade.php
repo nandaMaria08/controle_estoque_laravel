@@ -20,15 +20,13 @@
                     <x-nav-link :href="route('marks.index')" :active="request()->routeIs('dashboard')" class="border-b-2 border-transparent hover:border-red-500 focus:border-red-500 active:border-red-500">
                         {{ __('Marcas') }} 
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="border-b-2 border-transparent hover:border-red-500 focus:border-red-500 active:border-red-500">
-                        {{ __('Revistas') }} 
+                    <x-nav-link :href="route('products.index')" :active="request()->routeIs('dashboard')" class="border-b-2 border-transparent hover:border-red-500 focus:border-red-500 active:border-red-500">
+                        {{ __('Produtos') }} 
                     </x-nav-link>
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="border-b-2 border-transparent hover:border-red-500 focus:border-red-500 active:border-red-500">
-                        {{ __('Ciclos') }} 
+                        {{ __('Empréstimos') }} 
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="border-b-2 border-transparent hover:border-red-500 focus:border-red-500 active:border-red-500">
-                        {{ __('Pedidos') }} 
-                    </x-nav-link>
+
                 </div>
             </div>
 

@@ -5,18 +5,20 @@ use Illuminate\Support\Facades\Route;
 use Resources\Views\Auth;
 use Resources\Views;
 use App\Http\Controllers\MarkController;
+use App\Http\Controllers\ProductController;
+
 
 Route::get('/', function () {
     return view('auth.login');
 });
 
-/*Route::get('/dashboard', function () {
+Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');*/
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/mark_create', function () {
+/*Route::get('/mark_create', function () {
     return view('mark_create');
-})->middleware(['auth', 'verified'])->name('mark_create');
+})->middleware(['auth', 'verified'])->name('mark_create');*/
 
 Route::middleware('auth')->group(function () {
     Route::get('/marks', [MarkController::class, 'index'])->name('marks.index');
@@ -26,6 +28,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/marks/{mark}/edit', [MarkController::class, 'edit'])->name('marks.edit');
     Route::put('/marks/{mark}', [MarkController::class, 'update'])->name('marks.update');
     Route::delete('/marks/{mark}', [MarkController::class, 'destroy'])->name('marks.destroy');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+    Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+    Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+    Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
+    Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
+    Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
+    Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
 });
 
 
