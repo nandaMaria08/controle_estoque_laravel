@@ -67,7 +67,8 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $marks = Mark::all();
-        return view('product_edit', compact('marks'), ['product' => $product]);
+        return view('product_edit', compact('marks', 'product'));
+        
     }
 
     /**
