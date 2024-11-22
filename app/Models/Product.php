@@ -9,7 +9,7 @@ use App\Http\Controllers\MarkController;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'description', 'price', 'expiration_date', 'quantity', 'id_mark'];
+    protected $fillable = ['name', 'description', 'price', 'expiration_date', 'quantity', 'mark_id'];
 
    
 public function mark()

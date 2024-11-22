@@ -40,18 +40,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        
-
-    $request->validate([
-        'name' => 'required|string|max:255',  
-        'description' => 'required|string',
-        'price' => 'required|numeric',
-        'expiration_date' => 'required|date',
-        'quantity' => 'required|integer',
-        'mark_id' => 'required|exists:marks,id', 
-    ]);
-
-
     Product::create([
         'name' => $request->name,
         'description' => $request->description,
@@ -61,7 +49,8 @@ class ProductController extends Controller
         'mark_id' => $request->mark_id, 
     ]);
 
-    return redirect()->route('products.index');
+    return redirect()->back()->with('message', 'Produto cadastrado com sucesso');
+
     }
 
     /**

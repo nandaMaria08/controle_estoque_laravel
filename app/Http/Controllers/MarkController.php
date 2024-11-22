@@ -37,7 +37,7 @@ class MarkController extends Controller
       ]);
 
       if($created){
-        return redirect()->back()->with('message', 'Cadastrado com sucesso');
+        return redirect()->back()->with('message', 'Marca cadastrado com sucesso');
        }
        return redirect()->back()->with('message', 'Erro');
 
