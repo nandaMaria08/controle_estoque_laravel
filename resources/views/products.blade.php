@@ -28,7 +28,7 @@
             @endisset
 
             <div class="pt-10">
-            @if(session()->has('message_create'))
+            @if(session()->has('message'))
             <div class="bg-green-100 border border-green-400 text-green-700 px-6 py-4 rounded relative max-w-sm mx-auto" role="alert">
                 <strong class="font-bold">{{ session()->get('message') }}</strong>
                 <span class="absolute top-0 bottom-0 right-0 px-4 py-3">

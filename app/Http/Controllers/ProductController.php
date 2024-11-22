@@ -64,9 +64,10 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Product $product)
     {
-        //
+        $marks = Mark::all();
+        return view('product_edit', compact('marks'), ['product' => $product]);
     }
 
     /**
@@ -74,7 +75,12 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $updated = $this->product->where('id', $id)->update($request->except(['_token', '_method']));
+
+       if($updated){
+        return redirect()->back()->with('message', 'Editado com sucesso');
+       }
+       return redirect()->back()->with('message', 'Erro');
     }
 
     /**
@@ -82,6 +88,12 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $deleted = $this->product->where('id', $id)->delete();
+
+        if($deleted){
+            return redirect()->route('products.index')->with('message', 'Excluído com sucesso!');
+        }
+    
+        return redirect()->route('products.index')->with('message', 'Erro ao excluir!');
     }
 }
