@@ -57,9 +57,12 @@
                 </p> 
             </div>
             <div class="px-6 pt-4 pb-2">
-                <button class="bg-red-300 hover:bg-red-400 text-white font-bold py-2 px-4 rounded">
-                    Cadastrar
-                </button>
+                <a href="{{route('loans.create')}}">
+                    <button class="bg-red-300 hover:bg-red-400 text-white font-bold py-2 px-4 rounded">
+                        Cadastrar
+                    </button>
+                </a>
+
             </div>
         </div>
     </div>

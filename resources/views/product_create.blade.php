@@ -46,7 +46,7 @@
           
 
             <main class="flex justify-center pt-20">
-                <div class="w-full max-w-4xl bg-white p-8 rounded-lg shadow-lg">
+                <div class="w-full max-w-4xl bg-white px-8 rounded-lg shadow-lg">
                     <h1 class="text-center text-2xl font-semibold mb-6">Cadastre aqui os produtos disponíveis na sua loja!</h1>
                     <hr class="mb-6">
                     <form class="grid gap-6 mb-6 grid-cols-1 md:grid-cols-2" action="{{route('products.store')}}" method="POST">

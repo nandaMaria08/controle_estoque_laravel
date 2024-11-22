@@ -12,8 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('loans', function (Blueprint $table) {
+            $table->engine = "InnoDB";
             $table->id();
             $table->timestamps();
+            $table->text('order');
+            $table->text('person');
+            $table->date('date');
         });
     }
 

@@ -6,6 +6,7 @@ use Resources\Views\Auth;
 use Resources\Views;
 use App\Http\Controllers\MarkController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\LoanController;
 
 
 Route::get('/', function () {
@@ -38,6 +39,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
     Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
     Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/loans', [LoanController::class, 'index'])->name('loans.index');
+    Route::get('/loans/create', [LoanController::class, 'create'])->name('loans.create');
+    Route::post('/loans', [LoanController::class, 'store'])->name('loans.store');
+    Route::get('/loans/{loan}', [LoanController::class, 'show'])->name('loans.show');
+    Route::get('/loans/{loan}/edit', [LoanController::class, 'edit'])->name('loans.edit');
+    Route::put('/loans/{loan}', [LoanController::class, 'update'])->name('loans.update');
+    Route::delete('/loans/{loan}', [LoanController::class, 'destroy'])->name('loans.destroy');
 });
 
 
