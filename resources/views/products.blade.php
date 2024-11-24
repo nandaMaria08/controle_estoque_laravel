@@ -63,7 +63,7 @@
                 <td class="px-4 py-2 border-b hover:bg-red-100">{{$product->name}}</td>
                 <td class="px-4 py-2 border-b hover:bg-red-100">{{$product->description}}</td>
                 <td class="px-4 py-2 border-b hover:bg-red-100">R${{$product->price}}</td>
-                <td class="px-4 py-2 border-b hover:bg-red-100">{{$product->expiration_date}}</td>
+                <td class="px-4 py-2 border-b hover:bg-red-100">{{ \Carbon\Carbon::parse($product->expiration_date)->format('d/m/Y') }}</td>
                 <td class="px-4 py-2 border-b hover:bg-red-100">{{$product->quantity}}</td>
                 <td class="px-4 py-2 border-b hover:bg-red-100">{{ $product->mark->mark }}</td>
 

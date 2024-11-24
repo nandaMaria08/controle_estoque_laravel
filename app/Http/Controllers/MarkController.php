@@ -5,6 +5,7 @@ use App\Models\Mark;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreUpdateMarkRequest;
 
+
 class MarkController extends Controller
 {
     public readonly Mark $mark;

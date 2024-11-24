@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Mark;
 use App\Http\Requests\StoreUpdateProductRequest;
+use Carbon\Carbon;
 
 
 use Illuminate\Http\Request;
@@ -17,6 +18,7 @@ class ProductController extends Controller
     }
     public function index()
 {
+    Carbon::setLocale('pt_BR');
   
     $products = Product::with('mark')->get();
     

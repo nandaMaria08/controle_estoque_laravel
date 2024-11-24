@@ -59,7 +59,7 @@
                 <tr class="">
                     <td class="px-4 py-2 border-b hover:bg-red-100">{{$loan->order}}</td>
                     <td class="px-4 py-2 border-b hover:bg-red-100">{{$loan->person}}</td>
-                    <td class="px-4 py-2 border-b hover:bg-red-100">{{$loan->date}}</td> 
+                    <td class="px-4 py-2 border-b hover:bg-red-100"> {{ \Carbon\Carbon::parse($loan->date)->format('d/m/Y') }}</td> 
                     <td class="px-4 py-2 border-b">
                     <div class="flex space-x-2">
                         <form action="{{route('loans.destroy', ['loan' => $loan->id])}}" method="post">

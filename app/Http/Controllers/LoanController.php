@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Loan;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreUpdateLoanRequest;
+use Carbon\Carbon;
 
 class LoanController extends Controller
 {
@@ -14,6 +15,7 @@ class LoanController extends Controller
     }
     public function index()
     {
+        Carbon::setLocale('pt_BR');
         $loans = $this->loan->all();
         return view('loans',['loans' => $loans]);
     }
