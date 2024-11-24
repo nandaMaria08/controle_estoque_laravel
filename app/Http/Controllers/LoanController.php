@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Loan;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreUpdateLoanRequest;
 
 class LoanController extends Controller
 {
@@ -28,7 +29,7 @@ class LoanController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreUpdateLoanRequest $request)
     {
         Loan::create([
             'order' => $request->order,
@@ -59,7 +60,7 @@ class LoanController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreUpdateLoanRequest $request, string $id)
     {
         $updated = $this->loan->where('id', $id)->update($request->except(['_token', '_method']));
 

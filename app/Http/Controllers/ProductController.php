@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Mark;
+use App\Http\Requests\StoreUpdateProductRequest;
 
 
 use Illuminate\Http\Request;
@@ -38,7 +39,7 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreUpdateProductRequest $request)
     {
     Product::create([
         'name' => $request->name,
@@ -74,7 +75,7 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreUpdateProductRequest $request, string $id)
     {
         $updated = $this->product->where('id', $id)->update($request->except(['_token', '_method']));
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Mark;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreUpdateMarkRequest;
 
 class MarkController extends Controller
 {
@@ -30,7 +31,7 @@ class MarkController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreUpdateMarkRequest $request)
     {
       $created = $this->mark->create([
             'mark' => $request -> input('mark')
@@ -62,7 +63,7 @@ class MarkController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreUpdateMarkRequest $request, string $id)
     {
        $updated = $this->mark->where('id', $id)->update($request->except(['_token', '_method']));
 
