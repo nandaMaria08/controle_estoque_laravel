@@ -10,12 +10,13 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('requests', function (Blueprint $table) {
+        Schema::create('demands', function (Blueprint $table) {
+            $table->engine = "InnoDB";
             $table->id();
-            $table->string('tipo');
-            $table->date('data_chegada');
-            $table->string('ciclo');
-            $table->foreignId('marca_id')->constrained('marks')->onDelete('cascade');
+            $table->string('type');
+            $table->date('arrival_date');
+            $table->string('cycle');
+            $table->foreignId('mark_id')->constrained('marks')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('requests');
+        Schema::dropIfExists('demands');
     }
 };

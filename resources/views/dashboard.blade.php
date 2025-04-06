@@ -65,6 +65,25 @@
 
             </div>
         </div>
+
+        <div class="max-w-xs w-full sm:w-1/2 md:w-1/3 lg:w-1/4 rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="{{asset('assets/img/pedidos.jpeg')}}" alt="cosmeticos">
+            <div class="px-6 py-2">
+                <div class="font-bold text-xl mb-2">Cadastrar Pedidos</div>
+                <p class="text-gray-700 text-base">
+                    Cadastre aqui os pedidos disponíveis na sua loja!
+                </p> 
+            </div>
+            <div class="px-6 pt-4 pb-2">
+                <a href="{{route('requests.create')}}">
+                    <button class="bg-red-300 hover:bg-red-400 text-white font-bold py-2 px-4 rounded">
+                        Cadastrar
+                    </button>
+                </a>
+               
+            </div>
+        </div>
+
     </div>
 
 </x-app-layout>

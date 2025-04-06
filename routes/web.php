@@ -7,7 +7,7 @@ use Resources\Views;
 use App\Http\Controllers\MarkController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\LoanController;
-use App\Http\Controllers\RequestController;
+use App\Http\Controllers\DemandController;
 
 
 Route::get('/', function () {
@@ -56,13 +56,13 @@ Route::middleware('auth')->group(function () {
 
     // request
 
-    Route::get('/requests', [RequestController::class, 'index'])->name('requests.index');
-    Route::get('/requests/create', [RequestController::class, 'create'])->name('requests.create');
-    Route::post('/requests', [RequestController::class, 'store'])->name('requests.store');
-    Route::get('/requests/{request}', [RequestController::class, 'show'])->name('requests.show');
-    Route::get('/requests/{request}/edit', [RequestController::class, 'edit'])->name('requests.edit');
-    Route::put('/requests/{request}', [RequestController::class, 'update'])->name('requests.update');
-    Route::delete('/requests/{request}', [RequestController::class, 'destroy'])->name('requests.destroy');
+    Route::get('/demands', [DemandController::class, 'index'])->name('demands.index');
+    Route::get('/demands/create', [DemandController::class, 'create'])->name('demands.create');
+    Route::post('/demands', [DemandController::class, 'store'])->name('demands.store');
+    Route::get('/demands/{demands}', [DemandController::class, 'show'])->name('demands.show');
+    Route::get('/demands/{demands}/edit', [DemandController::class, 'edit'])->name('demands.edit');
+    Route::put('/demands/{demands}', [DemandController::class, 'update'])->name('demands.update');
+    Route::delete('/demands/{demands}', [DemandController::class, 'destroy'])->name('demands.destroy');
 
 
 
