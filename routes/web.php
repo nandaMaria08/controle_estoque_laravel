@@ -22,6 +22,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('mark_create');*/
 
 Route::middleware('auth')->group(function () {
+
+    // marks
+
     Route::get('/marks', [MarkController::class, 'index'])->name('marks.index');
     Route::get('/marks/create', [MarkController::class, 'create'])->name('marks.create');
     Route::post('/marks', [MarkController::class, 'store'])->name('marks.store');
@@ -29,9 +32,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/marks/{mark}/edit', [MarkController::class, 'edit'])->name('marks.edit');
     Route::put('/marks/{mark}', [MarkController::class, 'update'])->name('marks.update');
     Route::delete('/marks/{mark}', [MarkController::class, 'destroy'])->name('marks.destroy');
-});
 
-Route::middleware('auth')->group(function () {
+    // products
+
     Route::get('/products', [ProductController::class, 'index'])->name('products.index');
     Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
     Route::post('/products', [ProductController::class, 'store'])->name('products.store');
@@ -39,9 +42,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
     Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
     Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
-});
 
-Route::middleware('auth')->group(function () {
+    // loans
+
     Route::get('/loans', [LoanController::class, 'index'])->name('loans.index');
     Route::get('/loans/create', [LoanController::class, 'create'])->name('loans.create');
     Route::post('/loans', [LoanController::class, 'store'])->name('loans.store');
@@ -49,11 +52,19 @@ Route::middleware('auth')->group(function () {
     Route::get('/loans/{loan}/edit', [LoanController::class, 'edit'])->name('loans.edit');
     Route::put('/loans/{loan}', [LoanController::class, 'update'])->name('loans.update');
     Route::delete('/loans/{loan}', [LoanController::class, 'destroy'])->name('loans.destroy');
-});
+
+    // request
+
+    Route::get('/requests', [RequestController::class, 'index'])->name('requests.index');
+    Route::get('/requests/create', [RequestController::class, 'create'])->name('requests.create');
+    Route::post('/requests', [RequestController::class, 'store'])->name('requests.store');
+    Route::get('/requests/{request}', [RequestController::class, 'show'])->name('requests.show');
+    Route::get('/requests/{request}/edit', [RequestController::class, 'edit'])->name('requests.edit');
+    Route::put('/requests/{request}', [RequestController::class, 'update'])->name('requests.update');
+    Route::delete('/requests/{request}', [RequestController::class, 'destroy'])->name('requests.destroy');
 
 
 
-Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
