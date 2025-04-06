@@ -6,12 +6,10 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreUpdateDemandRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
+
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +20,22 @@ class StoreUpdateDemandRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'type' => [
+                'required',
+                'min:1',
+                'max:225',
+            ],
+            'arrival_date' => [
+                'required',
+            ],
+            'cycle' => [
+                'required',
+                'min:1',
+                'max:225,'
+            ],
+            'mark_id' => [
+                'required',
+            ],
         ];
     }
 }

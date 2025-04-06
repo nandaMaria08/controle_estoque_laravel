@@ -11,10 +11,11 @@ use Carbon\Carbon;
 
 class DemandController extends Controller
 {
-    public readonly Demand $demands;
+    public readonly Demand $demand;
 
-    public function __construct(Demand $demands){
-        $this->demands = new Demand();
+    public function __construct(Demand $demand)
+    {
+        $this->demand = new Demand();
     }
     public function index()
     {
@@ -33,7 +34,7 @@ class DemandController extends Controller
         return view('demands_create', compact('marks'));
     }
 
-   
+
     public function store(StoreUpdateDemandRequest $demands)
     {
         Demand::create([
@@ -42,30 +43,31 @@ class DemandController extends Controller
             'cycle' => $demands->cycle
 
         ]);
+
+        return redirect()->back()->with('message', 'Pedido cadastrado com sucesso');
+
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+
+    public function edit(Demand $demand)
     {
-        //
+        $marks = Mark::all();
+        return view('demand_edit', compact('marks', 'demands'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+
+    public function update(StoreUpdateDemandRequest $request, string $id)
     {
-        //
+        $updated = $this->demand->where('id', $id)->update($request->except(['_token', '_method']));
+        if ($updated) {
+            return redirect()->back()->with('message', 'Editado com sucesso');
+        }
+        return redirect()->back()->with('message', 'Erro');
     }
 
     /**
@@ -73,6 +75,12 @@ class DemandController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $deleted = $this->demand->where('id', $id)->delete();
+
+        if($deleted){
+            return redirect()->route('demands.index')->with('message', 'Excluído com sucesso!');
+        }
+    
+        return redirect()->route('demands.index')->with('message', 'Erro ao excluir!');
     }
 }

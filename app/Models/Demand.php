@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Demand extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['type', 'arrival_date', 'cycle', 'mark_id'];
+
+   
+    public function mark()
+    {
+        return $this->belongsTo(Mark::class);
+    }
 }
