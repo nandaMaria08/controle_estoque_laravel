@@ -7,6 +7,7 @@ use Resources\Views;
 use App\Http\Controllers\MarkController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\LoanController;
+use App\Http\Controllers\RequestController;
 
 
 Route::get('/', function () {
