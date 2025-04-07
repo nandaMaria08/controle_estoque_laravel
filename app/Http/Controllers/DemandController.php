@@ -31,7 +31,7 @@ class DemandController extends Controller
     {
         $marks = Mark::all();
 
-        return view('demands_create', compact('marks'));
+        return view('demand_create', compact('marks'));
     }
 
 
@@ -40,7 +40,8 @@ class DemandController extends Controller
         Demand::create([
             'type' => $demands->type,
             'arrival_date' => $demands->arrival_date,
-            'cycle' => $demands->cycle
+            'cycle' => $demands->cycle,
+            'mark_id' =>$demands->mark_id
 
         ]);
 

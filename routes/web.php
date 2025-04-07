@@ -59,10 +59,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/demands', [DemandController::class, 'index'])->name('demands.index');
     Route::get('/demands/create', [DemandController::class, 'create'])->name('demands.create');
     Route::post('/demands', [DemandController::class, 'store'])->name('demands.store');
-    Route::get('/demands/{demands}', [DemandController::class, 'show'])->name('demands.show');
-    Route::get('/demands/{demands}/edit', [DemandController::class, 'edit'])->name('demands.edit');
-    Route::put('/demands/{demands}', [DemandController::class, 'update'])->name('demands.update');
-    Route::delete('/demands/{demands}', [DemandController::class, 'destroy'])->name('demands.destroy');
+    Route::get('/demands/{demand}', [DemandController::class, 'show'])->name('demands.show');
+    Route::get('/demands/{demand}/edit', [DemandController::class, 'edit'])->name('demands.edit');
+    Route::put('/demands/{demand}', [DemandController::class, 'update'])->name('demands.update');
+    Route::delete('/demands/{demand}', [DemandController::class, 'destroy'])->name('demands.destroy');
 
 
 

@@ -1,7 +1,7 @@
 <x-app-layout>
-    
 
-   <!-- <div class="py-12">
+
+    <!-- <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
@@ -18,15 +18,15 @@
                 <div class="font-bold text-xl mb-2">Cadastrar Marcas</div>
                 <p class="text-gray-700 text-base">
                     Cadastre aqui as marcas existentes na sua loja!
-                </p> 
+                </p>
             </div>
             <div class="px-6 pt-4 pb-2">
                 <a href="{{route('marks.create')}}">
                     <button class="bg-red-300 hover:bg-red-400 text-white font-bold py-2 px-4 rounded">
-                    Cadastrar
-                    </button> 
+                        Cadastrar
+                    </button>
                 </a>
-                
+
             </div>
         </div>
 
@@ -36,7 +36,7 @@
                 <div class="font-bold text-xl mb-2">Cadastrar Produtos</div>
                 <p class="text-gray-700 text-base">
                     Cadastre aqui os produtos disponíveis na sua loja!
-                </p> 
+                </p>
             </div>
             <div class="px-6 pt-4 pb-2">
                 <a href="{{route('products.create')}}">
@@ -44,7 +44,7 @@
                         Cadastrar
                     </button>
                 </a>
-               
+
             </div>
         </div>
 
@@ -54,7 +54,7 @@
                 <div class="font-bold text-xl mb-2">Empréstimos</div>
                 <p class="text-gray-700 text-base">
                     Cadastre aqui os empréstimos de produtos!
-                </p> 
+                </p>
             </div>
             <div class="px-6 pt-4 pb-2">
                 <a href="{{route('loans.create')}}">
@@ -72,18 +72,21 @@
                 <div class="font-bold text-xl mb-2">Cadastrar Pedidos</div>
                 <p class="text-gray-700 text-base">
                     Cadastre aqui os pedidos disponíveis na sua loja!
-                </p> 
+                </p>
             </div>
             <div class="px-6 pt-4 pb-2">
-                <a href="{{route('requests.create')}}">
+                <a href="{{route('demands.create')}}">
                     <button class="bg-red-300 hover:bg-red-400 text-white font-bold py-2 px-4 rounded">
                         Cadastrar
                     </button>
                 </a>
-               
+
             </div>
         </div>
 
     </div>
+
+    
+
 
 </x-app-layout>
