@@ -80,38 +80,10 @@
                     <div class="flex items-center space-x-4">
                         <div class="flex-1">
                             <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                for="email">Email</label>
-                            <input id="email" name="email"
-                                class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full"
-                                placeholder="Email"></input>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center space-x-4">
-                        <div class="flex-1">
-                            <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 for="phone">Telefone</label>
                             <input type="text" id="phone" name="phone"
                                 class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full"
-                                placeholder="Preço do produto">
-                        </div>
-                    </div>
-
-                    <div class="flex items-center space-x-4">
-                        <div class="flex-1">
-                            <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white" for="cpf">CPF</label>
-                            <input type="text" id="cpf" name="cpf"
-                                class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full">
-                        </div>
-                    </div>
-
-                    <div class="flex items-center space-x-4">
-                        <div class="flex-1">
-                            <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                for="address">Endereço</label>
-                            <input type="text" id="address" name="address"
-                                class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full"
-                                placeholder="Endereço">
+                                placeholder="(__) _____-____">
                         </div>
                     </div>
 
@@ -126,32 +98,6 @@
             </div>
         </main>
     </div>
-    <script>
-        function formatCPF(input) {
-            let value = input.value.replace(/\D/g, '');
-            value = value.slice(0, 11)
-                .replace(/(\d{3})(\d)/, '$1.$2')
-                .replace(/(\d{3})(\d)/, '$1.$2')
-                .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
-            input.value = value;
-        }
-
-        function formatPhone(input) {
-            let value = input.value.replace(/\D/g, '');
-            value = value.slice(0, 11)
-                .replace(/^(\d{2})(\d)/, '($1) $2')
-                .replace(/(\d{5})(\d{4})$/, '$1-$2');
-            input.value = value;
-        }
-
-        document.getElementById('cpf').addEventListener('input', function () {
-            formatCPF(this);
-        });
-
-        document.getElementById('phone').addEventListener('input', function () {
-            formatPhone(this);
-        });
-    </script>
 
 </body>
 

@@ -11,10 +11,11 @@ class ClientController extends Controller
 
     public readonly Client $client;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->client = new Client();
     }
-  
+
     public function index()
     {
         $clients = Client::all();
@@ -30,10 +31,8 @@ class ClientController extends Controller
     {
         Client::create([
             'name' => $request->name,
-            'email' => $request->email,
             'phone' => $request->phone,
             'cpf' => $request->cpf,
-            'address' => $request->address,
         ]);
 
         return redirect()->back()->with('message', 'Cliente cadastrado(a) com sucesso');
@@ -53,16 +52,16 @@ class ClientController extends Controller
         return view('client_edit', compact('client'));
     }
 
-    public function update(Request $request, Client $id)
+    public function update(Request $request, Client $client)
     {
         // $client = Client::find($id);
 
-        $updated = $this->client->where('id', $id)->update($request->except(['_token', '_method']));
+        $updated = $client->update($request->except(['_token', '_method']));
 
         if ($updated) {
-            return redirect()->back()->with('message','Editado com sucesso');
+            return redirect()->back()->with('message', 'Editado com sucesso');
         }
-        return redirect()->back()->with('message','Erro');
+        return redirect()->back()->with('message', 'Erro');
     }
     /**
      * Remove the specified resource from storage.
@@ -72,9 +71,9 @@ class ClientController extends Controller
         $deleted = $this->client->where('id', $id)->delete();
 
         if ($deleted) {
-            return redirect()->route('clients.index')->with('message','Excluído com sucesso!');
+            return redirect()->route('clients.index')->with('message', 'Excluído com sucesso!');
         }
         return redirect()->route('clients.index')->with('message', 'Erro ao excluir!');
-     
+
     }
 }

@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreUpdateClientRequest extends FormRequest
 {
-    
+
     public function authorize(): bool
     {
         return true;
@@ -25,22 +25,11 @@ class StoreUpdateClientRequest extends FormRequest
                 'min:1',
                 'max:255',
             ],
-            'email' => [
-                'nullable',
-                'unique:clients,email',
-                ],
-            'phone'=> [
+            'phone' => [
                 'required',
                 'max:20',
-                ],
-            'cpf'=> [
-                'required',
-                'max:14',
-                'unique:clients,cpf'
-                ],
-            'address' => [
-                'nullable',
             ]
+
         ];
     }
 }
