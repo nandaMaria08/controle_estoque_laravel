@@ -58,7 +58,7 @@ class DemandController extends Controller
     public function edit(Demand $demand)
     {
         $marks = Mark::all();
-        return view('demand_edit', compact('marks', 'demands'));
+        return view('demand_edit', compact('marks', 'demand'));
     }
 
 

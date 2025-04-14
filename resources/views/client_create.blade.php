@@ -52,7 +52,8 @@
 
         <main class="flex justify-center pt-20">
             <div class="w-full max-w-4xl bg-white px-8 rounded-lg shadow-lg">
-                <h1 class="text-center text-2xl font-semibold mb-6">Edite aqui os pedidos disponíveis na sua loja!</h1>
+                <h1 class="text-center text-2xl font-semibold mb-6">Cadastre aqui os clientes!
+                </h1>
                 <hr class="mb-6">
                 <div>
                     @if($errors->any())
@@ -61,63 +62,63 @@
                         @endforeach
                     @endif
                 </div>
-                <form class="grid gap-6 mb-6 grid-cols-1 md:grid-cols-2"
-                    action="{{route('demands.update', ['demand' => $demand->id])}}" method="POST">
+                <form class="grid gap-6 mb-6 grid-cols-1 md:grid-cols-2" action="{{route('clients.store')}}"
+                    method="POST">
                     @csrf
-                    <input type="hidden" name="_method" value="PUT">
+
+
                     <div class="flex items-center space-x-4">
                         <div class="flex-1">
-                            <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white" for="type">Tipo de
-                                pedido</label>
-                            <input type="text" id="type" name="type" value="{{ $demand->type }}"
+                            <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                for="name">Nome</label>
+                            <input type="text" id="name" name="name"
                                 class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full"
-                                placeholder="Tipo de pedido">
+                                placeholder="Nome">
                         </div>
                     </div>
 
                     <div class="flex items-center space-x-4">
                         <div class="flex-1">
                             <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                for="cycle">Ciclo</label>
-                            <input type="text" id="cycle" name="cycle" value="{{ $demand->cycle }}"
+                                for="email">Email</label>
+                            <input id="email" name="email"
                                 class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full"
-                                placeholder="Ciclo">
+                                placeholder="Email"></input>
                         </div>
                     </div>
-
 
                     <div class="flex items-center space-x-4">
                         <div class="flex-1">
                             <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                for="mark_id">Marca</label>
-                            <select id="mark_id" name="mark_id"
+                                for="phone">Telefone</label>
+                            <input type="text" id="phone" name="phone"
+                                class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full"
+                                placeholder="Preço do produto">
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-1">
+                            <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white" for="cpf">CPF</label>
+                            <input type="text" id="cpf" name="cpf"
                                 class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full">
-                                <option value="" disabled selected>Selecione a marca</option>
-                                @foreach($marks as $mark)
-                                    <option value="{{ $mark->id }}" {{ $mark->id == $demand->mark_id ? 'selected' : '' }}>
-                                        {{ $mark->id }} - {{ $mark->mark }}
-                                    </option>
-                                @endforeach
-                            </select>
-
                         </div>
                     </div>
 
                     <div class="flex items-center space-x-4">
                         <div class="flex-1">
                             <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                for="arrival_date">Data de chegada</label>
-                            <input type="date" id="arrival_date" name="arrival_date" value="{{ $demand->arrival_date }}"
+                                for="address">Endereço</label>
+                            <input type="text" id="address" name="address"
                                 class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full"
-                                placeholder="Data de chegada">
+                                placeholder="Endereço">
                         </div>
                     </div>
-
 
                     <div class="pt-7">
                         <button type="submit"
                             class="bg-red-300 hover:bg-red-400 text-white font-semibold py-2 px-4 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 text-sm w-full md:w-auto">
-                            Editar
+                            Cadastrar
                         </button>
                     </div>
                 </form>
@@ -125,6 +126,32 @@
             </div>
         </main>
     </div>
+    <script>
+        function formatCPF(input) {
+            let value = input.value.replace(/\D/g, '');
+            value = value.slice(0, 11)
+                .replace(/(\d{3})(\d)/, '$1.$2')
+                .replace(/(\d{3})(\d)/, '$1.$2')
+                .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+            input.value = value;
+        }
+
+        function formatPhone(input) {
+            let value = input.value.replace(/\D/g, '');
+            value = value.slice(0, 11)
+                .replace(/^(\d{2})(\d)/, '($1) $2')
+                .replace(/(\d{5})(\d{4})$/, '$1-$2');
+            input.value = value;
+        }
+
+        document.getElementById('cpf').addEventListener('input', function () {
+            formatCPF(this);
+        });
+
+        document.getElementById('phone').addEventListener('input', function () {
+            formatPhone(this);
+        });
+    </script>
 
 </body>
 

@@ -8,6 +8,7 @@ use App\Http\Controllers\MarkController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\LoanController;
 use App\Http\Controllers\DemandController;
+use App\Http\Controllers\ClientController;
 
 
 Route::get('/', function () {
@@ -63,6 +64,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/demands/{demand}/edit', [DemandController::class, 'edit'])->name('demands.edit');
     Route::put('/demands/{demand}', [DemandController::class, 'update'])->name('demands.update');
     Route::delete('/demands/{demand}', [DemandController::class, 'destroy'])->name('demands.destroy');
+
+    //clients
+
+    Route::get('/clients', [ClientController::class, 'index'])->name('clients.index');
+    Route::get('/clients/create', [ClientController::class, 'create'])->name('clients.create');
+    Route::post('/clients', [ClientController::class, 'store'])->name('clients.store');
+    Route::get('/clients/{client}', [ClientController::class, 'show'])->name('clients.show');
+    Route::get('/clients/{client}/edit', [ClientController::class, 'edit'])->name('clients.edit');
+    Route::put('/clients/{client}', [ClientController::class, 'update'])->name('clients.update');
+    Route::delete('/clients/{client}', [ClientController::class, 'destroy'])->name('clients.destroy');
 
 
 

@@ -29,6 +29,9 @@
                     <x-nav-link :href="route('demands.index')" :active="request()->routeIs('dashboard')" class="border-b-2 border-transparent hover:border-red-500 focus:border-red-500 active:border-red-500">
                         {{ __('Pedidos') }} 
                     </x-nav-link>
+                    <x-nav-link :href="route('clients.index')" :active="request()->routeIs('dashboard')" class="border-b-2 border-transparent hover:border-red-500 focus:border-red-500 active:border-red-500">
+                        {{ __('Clientes') }} 
+                    </x-nav-link>
 
                 </div>
             </div>
@@ -97,6 +100,12 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('loans.index')" :active="request()->routeIs('dashboard')" class="border-b-2 border-transparent hover:border-red-500 focus:border-red-500 active:border-red-500">
                         {{ __('Empréstimos') }} 
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('demands.index')" :active="request()->routeIs('dashboard')" class="border-b-2 border-transparent hover:border-red-500 focus:border-red-500 active:border-red-500">
+                        {{ __('Pedidos') }} 
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('clients.index')" :active="request()->routeIs('dashboard')" class="border-b-2 border-transparent hover:border-red-500 focus:border-red-500 active:border-red-500">
+                        {{ __('Clientes') }} 
             </x-responsive-nav-link>
 
                 
