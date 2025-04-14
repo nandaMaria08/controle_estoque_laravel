@@ -71,7 +71,7 @@
             <div class="px-6 py-2">
                 <div class="font-bold text-xl mb-2">Cadastrar Pedidos</div>
                 <p class="text-gray-700 text-base">
-                    Cadastre aqui os pedidos disponíveis na sua loja!
+                    Cadastre aqui os pedidos que chegaram na sua loja!
                 </p>
             </div>
             <div class="px-6 pt-4 pb-2">
