@@ -7,18 +7,17 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Fonts -->
+      
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="font-sans antialiased">
         <div class="h-screen bg-white">
             @include('layouts.navigation')
 
-            <!-- Page Heading -->
+    
             @isset($header)
                 <header class="bg-red shadow">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -45,8 +44,8 @@
 
           
 
-            <main class="flex justify-center pt-20">
-                <div class="w-full max-w-4xl bg-white px-8 rounded-lg shadow-lg">
+            <main class="flex justify-center pt-20 ">
+                <div class="w-full max-w-4xl bg-white px-8 rounded-lg shadow-lg mb-10">
                     <h1 class="text-center text-2xl font-semibold mb-6">Edite aqui os produtos disponíveis na sua loja!</h1>
                     <hr class="mb-6">
                     <div>
@@ -110,7 +109,7 @@
                         </div>
 
 
-                        <div class="pt-7">
+                        <div class="pt-7 flex justify-end col-span-2">
                             <button type="submit" class="bg-red-300 hover:bg-red-400 text-white font-semibold py-2 px-4 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 text-sm w-full md:w-auto">
                                 Editar
                             </button>
