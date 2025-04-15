@@ -52,7 +52,7 @@ class ClientController extends Controller
         return view('client_edit', compact('client'));
     }
 
-    public function update(Request $request, Client $client)
+    public function update(StoreUpdateClientRequest $request, Client $client)
     {
         // $client = Client::find($id);
 
