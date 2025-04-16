@@ -30,8 +30,8 @@ class StoreUpdateDemandRequest extends FormRequest
             ],
             'cycle' => [
                 'required',
-                'min:1',
-                'max:225,'
+                'numeric',
+                'min:1'
             ],
             'mark_id' => [
                 'required',
