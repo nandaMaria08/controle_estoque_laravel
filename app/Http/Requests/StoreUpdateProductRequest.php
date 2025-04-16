@@ -34,12 +34,16 @@ class StoreUpdateProductRequest extends FormRequest
             ],
             'price' => [
                     'required',
+                    'numeric',
+                    'min:0',
             ],
             'expiration_date' => [
                     'required',
             ],
             'quantity' => [
                     'required',
+                    'numeric',
+                    'min:1',
             ],
             'mark_id' => [
                     'required',
