@@ -22,19 +22,22 @@ class StoreUpdateDemandRequest extends FormRequest
         return [
             'type' => [
                 'required',
+                'string',
                 'min:1',
                 'max:225',
             ],
             'arrival_date' => [
                 'required',
+                'date',
             ],
             'cycle' => [
                 'required',
-                'numeric',
+                'string',
                 'min:1'
             ],
             'mark_id' => [
                 'required',
+                'exists:marks,id',
             ],
         ];
     }

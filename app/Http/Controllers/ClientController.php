@@ -32,7 +32,6 @@ class ClientController extends Controller
         Client::create([
             'name' => $request->name,
             'phone' => $request->phone,
-            'cpf' => $request->cpf,
         ]);
 
         return redirect()->back()->with('message', 'Cliente cadastrado(a) com sucesso');
@@ -54,8 +53,7 @@ class ClientController extends Controller
 
     public function update(StoreUpdateClientRequest $request, Client $client)
     {
-        // $client = Client::find($id);
-
+        // $updated = $this->client->where('id', $id)->update($request->except(['_token', '_method']));
         $updated = $client->update($request->except(['_token', '_method']));
 
         if ($updated) {

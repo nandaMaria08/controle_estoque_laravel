@@ -27,6 +27,7 @@ class StoreUpdateClientRequest extends FormRequest
             ],
             'phone' => [
                 'required',
+                'min:11',
                 'max:20',
             ]
 

@@ -62,14 +62,17 @@ class DemandController extends Controller
     }
 
 
-    public function update(StoreUpdateDemandRequest $request, string $id)
-    {
-        $updated = $this->demand->where('id', $id)->update($request->except(['_token', '_method']));
-        if ($updated) {
-            return redirect()->back()->with('message', 'Editado com sucesso');
-        }
-        return redirect()->back()->with('message', 'Erro');
+   public function update(StoreUpdateDemandRequest $request, string $id)
+{
+    $demand = Demand::findOrFail($id);
+    $updated = $demand->update($request->validated());
+
+    if ($updated) {
+        return redirect()->back()->with('message', 'Editado com sucesso');
     }
+    return redirect()->back()->with('message', 'Erro');
+}
+
 
     /**
      * Remove the specified resource from storage.

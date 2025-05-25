@@ -21,27 +21,31 @@ class ProfileTest extends TestCase
         $response->assertOk();
     }
 
-    public function test_profile_information_can_be_updated(): void
-    {
-        $user = User::factory()->create();
+   public function test_profile_information_can_be_updated(): void
+{
+    $user = User::factory()->create([
+        'email' => 'original@example.com',
+    ]);
 
-        $response = $this
-            ->actingAs($user)
-            ->patch('/profile', [
-                'name' => 'Test User',
-                'email' => 'test@example.com',
-            ]);
+    $novoEmail = 'user' . uniqid() . '@example.com';
 
-        $response
-            ->assertSessionHasNoErrors()
-            ->assertRedirect('/profile');
+    $response = $this
+        ->actingAs($user)
+        ->patch('/profile', [
+            'name' => 'Test User',
+            'email' => $novoEmail,
+        ]);
 
-        $user->refresh();
+    $response
+        ->assertSessionHasNoErrors()
+        ->assertRedirect('/profile');
 
-        $this->assertSame('Test User', $user->name);
-        $this->assertSame('test@example.com', $user->email);
-        $this->assertNull($user->email_verified_at);
-    }
+    $user->refresh();
+
+    $this->assertSame('Test User', $user->name);
+    $this->assertSame($novoEmail, $user->email);
+    $this->assertNull($user->email_verified_at);
+}
 
     public function test_email_verification_status_is_unchanged_when_the_email_address_is_unchanged(): void
     {
