@@ -62,21 +62,21 @@
                         <div class="flex items-center space-x-4">
                             <div class="flex-1">
                                 <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white" for="order">Nome do Produto</label>
-                                <input type="text" id="order" name="order" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" placeholder="Nome do produto" >
+                                <input type="text" id="order" name="order" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" placeholder="Nome do produto" >
                             </div>
                         </div>
 
                         <div class="flex items-center space-x-4">
                             <div class="flex-1">
                                 <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white" for="person">Revendedor</label>
-                                <input type="text" id="person" name="person" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" placeholder="Nome do revendedor" >
+                                <input type="text" id="person" name="person" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" placeholder="Nome do revendedor" >
                             </div>
                         </div>
 
                         <div class="flex items-center space-x-4 justify-center md:justify-start">
                             <div class="flex-1">
                                 <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white" for="date">Data</label>
-                                <input type="date" id="date" name="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" >
+                                <input type="date" id="date" name="date" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" >
                             </div>
 
                             <div class="pt-7">

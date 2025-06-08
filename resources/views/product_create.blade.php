@@ -61,41 +61,41 @@
                         <div class="flex items-center space-x-4">
                             <div class="flex-1">
                                 <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white" for="name">Nome do Produto</label>
-                                <input type="text" id="name" name="name" class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" placeholder="Nome do produto" >
+                                <input type="text" id="name" name="name" required class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" placeholder="Nome do produto" >
                             </div>
                         </div>
 
                         <div class="flex items-center space-x-4">
                             <div class="flex-1">
                                 <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white" for="description">Descrição</label>
-                                <input id="description" name="description" class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" placeholder="Descrição do produto" >
+                                <input id="description" name="description" required class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" placeholder="Descrição do produto" >
                             </div>
                         </div>
 
                         <div class="flex items-center space-x-4">
                             <div class="flex-1">
                                 <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white" for="price">Preço</label>
-                                <input type="text" id="price" name="price" class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" placeholder="Preço do produto">
+                                <input type="text" id="price" name="price" required class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" placeholder="Preço do produto">
                             </div>
                         </div>
 
                         <div class="flex items-center space-x-4">
                             <div class="flex-1">
                                 <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white" for="expiration_date">Data de Validade</label>
-                                <input type="date" id="expiration_date" name="expiration_date" class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" >
+                                <input type="date" id="expiration_date" required name="expiration_date" class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" >
                             </div>
                         </div>
 
                         <div class="flex items-center space-x-4">
                             <div class="flex-1">
                                 <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white" for="quantity">Quantidade</label>
-                                <input type="number" id="quantity" name="quantity" class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" placeholder="Quantidade do produto" >
+                                <input type="number" id="quantity" name="quantity" required class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" placeholder="Quantidade do produto" >
                             </div>
                         </div>
                         <div class="flex items-center space-x-4">
                             <div class="flex-1">
                                 <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white" for="mark_id">Marca</label>
-                                <select id="mark_id" name="mark_id" class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" >
+                                <select id="mark_id" name="mark_id" required class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" >
                                     <option value="" disabled selected>Selecione a marca</option>
                                     @foreach($marks as $mark)
                                         <option value="{{ $mark->id }}">{{$mark->id}}-{{ $mark->mark }}</option>

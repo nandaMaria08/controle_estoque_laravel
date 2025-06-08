@@ -70,7 +70,7 @@
                         <div class="flex-1">
                             <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white" for="type">Tipo do
                                 pedido</label>
-                            <input type="text" id="type" name="type"
+                            <input type="text" id="type" name="type" required
                                 class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full"
                                 placeholder="Tipo do pedido">
                         </div>
@@ -80,7 +80,7 @@
                         <div class="flex-1">
                             <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 for="cycle">Ciclo</label>
-                            <input type="number" id="cycle" name="cycle"
+                            <input type="number" id="cycle" name="cycle" required
                                 class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full"
                                 placeholder="Ciclo do pedido"></input>
                         </div>
@@ -90,7 +90,7 @@
                         <div class="flex-1">
                             <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 for="mark_id">Marca</label>
-                            <select id="mark_id" name="mark_id"
+                            <select id="mark_id" name="mark_id" required
                                 class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full">
                                 <option value="" disabled selected>Selecione a marca</option>
                                 @foreach($marks as $mark)
@@ -105,7 +105,7 @@
                         <div class="flex-1">
                             <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 for="arrival_date">Data de chegada</label>
-                            <input type="date" id="arrival_date" name="arrival_date"
+                            <input type="date" id="arrival_date" name="arrival_date" required
                                 class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full">
                         </div>
                     </div>
