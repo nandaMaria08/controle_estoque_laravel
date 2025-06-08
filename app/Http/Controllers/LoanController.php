@@ -39,7 +39,7 @@ class LoanController extends Controller
             'date' => $request->date, 
         ]);
     
-        return redirect()->back()->with('message', 'Empréstimo registrado, com sucesso');
+        return redirect()->route('loans.index')->with('message', 'Empréstimo registrado, com sucesso');
     
     }
 
@@ -67,7 +67,7 @@ class LoanController extends Controller
         $updated = $this->loan->where('id', $id)->update($request->except(['_token', '_method']));
 
        if($updated){
-        return redirect()->back()->with('message', 'Editado com sucesso');
+        return redirect()->route('loans.index')->with('message', 'Editado com sucesso');
        }
        return redirect()->back()->with('message', 'Erro');
     }

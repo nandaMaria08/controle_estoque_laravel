@@ -39,7 +39,7 @@ class MarkController extends Controller
       ]);
 
       if($created){
-        return redirect()->back()->with('message', 'Marca cadastrado com sucesso');
+        return redirect()->route('marks.index')->with('message', 'Marca cadastrado com sucesso');
        }
        return redirect()->back()->with('message', 'Erro');
 
@@ -69,7 +69,7 @@ class MarkController extends Controller
        $updated = $this->mark->where('id', $id)->update($request->except(['_token', '_method']));
 
        if($updated){
-        return redirect()->back()->with('message', 'Editado com sucesso');
+        return redirect()->route('marks.index')->with('message', 'Editado com sucesso');
        }
        return redirect()->back()->with('message', 'Erro');
        

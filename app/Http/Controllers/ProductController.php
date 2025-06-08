@@ -41,20 +41,23 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreUpdateProductRequest $request)
-    {
+public function store(StoreUpdateProductRequest $request)
+{
+
+    $price = str_replace(['R$', '.', ','], ['', '', '.'], $request->price);
+
     Product::create([
         'name' => $request->name,
         'description' => $request->description,
-        'price' => $request->price,
+        'price' => $price, 
         'expiration_date' => $request->expiration_date,
         'quantity' => $request->quantity,
         'mark_id' => $request->mark_id, 
     ]);
 
-    return redirect()->back()->with('message', 'Produto cadastrado com sucesso');
+    return redirect()->route('products.index')->with('message', 'Produto cadastrado com sucesso');
+}
 
-    }
 
     /**
      * Display the specified resource.
@@ -77,15 +80,22 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(StoreUpdateProductRequest $request, string $id)
-    {
-        $updated = $this->product->where('id', $id)->update($request->except(['_token', '_method']));
+public function update(StoreUpdateProductRequest $request, string $id)
+{
+    $data = $request->except(['_token', '_method']);
 
-       if($updated){
-        return redirect()->back()->with('message', 'Editado com sucesso');
-       }
-       return redirect()->back()->with('message', 'Erro');
+    // Converte "R$ 12,34" para "12.34"
+    $data['price'] = str_replace(['R$', '.', ','], ['', '', '.'], $data['price']);
+
+    $updated = $this->product->where('id', $id)->update($data);
+
+    if ($updated) {
+        return redirect()->route('products.index')->with('message', 'Editado com sucesso');
     }
+
+    return redirect()->back()->with('message', 'Erro');
+}
+
 
     /**
      * Remove the specified resource from storage.

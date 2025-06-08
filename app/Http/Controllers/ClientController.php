@@ -27,15 +27,18 @@ class ClientController extends Controller
         return view('client_create');
     }
 
-    public function store(StoreUpdateClientRequest $request)
-    {
-        Client::create([
-            'name' => $request->name,
-            'phone' => $request->phone,
-        ]);
+public function store(StoreUpdateClientRequest $request)
+{
+    $cleanPhone = preg_replace('/\D/', '', $request->phone); // remove tudo que não for número
 
-        return redirect()->back()->with('message', 'Cliente cadastrado(a) com sucesso');
-    }
+    Client::create([
+        'name' => $request->name,
+        'phone' => $cleanPhone,
+    ]);
+
+    return redirect()->route('clients.index')->with('message', 'Cliente cadastrado(a) com sucesso');
+}
+
 
     public function show(string $id)
     {
@@ -51,16 +54,20 @@ class ClientController extends Controller
         return view('client_edit', compact('client'));
     }
 
-    public function update(StoreUpdateClientRequest $request, Client $client)
-    {
-        // $updated = $this->client->where('id', $id)->update($request->except(['_token', '_method']));
-        $updated = $client->update($request->except(['_token', '_method']));
+public function update(StoreUpdateClientRequest $request, Client $client)
+{
+    $data = $request->except(['_token', '_method']);
+    $data['phone'] = preg_replace('/\D/', '', $request->phone); // limpa a máscara
 
-        if ($updated) {
-            return redirect()->back()->with('message', 'Editado com sucesso');
-        }
-        return redirect()->back()->with('message', 'Erro');
+    $updated = $client->update($data);
+
+    if ($updated) {
+        return redirect()->route('clients.index')->with('message', 'Editado com sucesso');
     }
+
+    return redirect()->back()->with('message', 'Erro');
+}
+
     /**
      * Remove the specified resource from storage.
      */

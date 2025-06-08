@@ -40,6 +40,14 @@
             @endif
         </div>
 
+        <div class="px-20 mt-4 flex justify-end">
+            <a href="{{ route('products.create') }}">
+                <button class="px-6 py-3 bg-red-300 text-white rounded-lg hover:bg-red-400 transition duration-200">
+                    + Novo Produto
+                </button>
+            </a>
+        </div>
+
         <main>
             <div class="overflow-x-auto py-10 px-20">
                 <div class="overflow-x-auto shadow-md sm:rounded-lg">

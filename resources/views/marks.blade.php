@@ -23,6 +23,8 @@
             </header>
         @endisset
 
+
+
         <div class="pt-10">
             @if(session()->has('message'))
                 <div class="bg-green-100 border border-green-400 text-green-700 px-6 py-4 rounded relative max-w-sm mx-auto" role="alert">
@@ -36,6 +38,18 @@
                 </div>
             @endif
         </div>
+
+          
+
+
+        <div class="px-20 mt-4 flex justify-end">
+            <a href="{{ route('marks.create') }}">
+                <button class="px-6 py-3 bg-red-300 text-white rounded-lg hover:bg-red-400 transition duration-200">
+                    + Nova Marca
+                </button>
+            </a>
+        </div>
+
 
         <main>
             <div class="overflow-x-auto py-10 px-20">

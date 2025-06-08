@@ -68,14 +68,14 @@
                         <div class="flex items-center space-x-4">
                             <div class="flex-1">
                                 <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white" for="description">Descrição</label>
-                                <textarea id="description" name="description" class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" placeholder="Descrição do produto" ></textarea>
+                                <input id="description" name="description" class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" placeholder="Descrição do produto" >
                             </div>
                         </div>
 
                         <div class="flex items-center space-x-4">
                             <div class="flex-1">
                                 <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white" for="price">Preço</label>
-                                <input type="number" step="0.01" id="price" name="price" class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" placeholder="Preço do produto" >
+                                <input type="text" id="price" name="price" class="min-w-[300px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 dark:bg-red-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500 w-full" placeholder="Preço do produto">
                             </div>
                         </div>
 
@@ -115,6 +115,31 @@
                 </div>
             </main>
         </div>
-        
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const priceInput = document.getElementById("price");
+
+        priceInput.addEventListener("input", function (e) {
+            let value = e.target.value.replace(/\D/g, "");
+            value = (value / 100).toFixed(2);
+            value = value.replace(".", ",");
+            value = "R$ " + value;
+            e.target.value = value;
+        });
+
+        priceInput.addEventListener("focus", function (e) {
+            e.target.value = e.target.value.replace("R$ ", "").replace(",", ".");
+        });
+
+        priceInput.addEventListener("blur", function (e) {
+            let value = e.target.value;
+            if (!value.includes("R$")) {
+                value = parseFloat(value).toFixed(2).replace(".", ",");
+                e.target.value = "R$ " + value;
+            }
+        });
+    });
+  </script>
+
     </body>
 </html>

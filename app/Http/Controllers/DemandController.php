@@ -45,7 +45,7 @@ class DemandController extends Controller
 
         ]);
 
-        return redirect()->back()->with('message', 'Pedido cadastrado com sucesso');
+        return redirect()->route('demands.index')->with('message', 'Pedido cadastrado com sucesso');
 
     }
 
@@ -68,7 +68,7 @@ class DemandController extends Controller
     $updated = $demand->update($request->validated());
 
     if ($updated) {
-        return redirect()->back()->with('message', 'Editado com sucesso');
+        return redirect()->route('demands.index')->with('message', 'Editado com sucesso');
     }
     return redirect()->back()->with('message', 'Erro');
 }

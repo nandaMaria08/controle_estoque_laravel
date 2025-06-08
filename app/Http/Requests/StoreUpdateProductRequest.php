@@ -34,7 +34,6 @@ class StoreUpdateProductRequest extends FormRequest
             ],
             'price' => [
                     'required',
-                    'numeric',
                     'min:0',
             ],
             'expiration_date' => [
